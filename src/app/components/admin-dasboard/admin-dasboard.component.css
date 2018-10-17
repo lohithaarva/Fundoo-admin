@@ -1,0 +1,67 @@
+.jumbotron {
+    /* height:43px; */
+    background-color: #3c3c3c;
+}
+
+.heading div:nth-child(1)
+{
+  color: blue;
+} 
+.heading div:nth-child(2)
+{
+  color:red;
+}
+.heading div:nth-child(3)
+{
+  color:#fb0;
+}
+.heading div:nth-child(4)
+{
+  color:blue;
+}
+.heading div:nth-child(5)
+{
+  color:green;
+}
+.heading div:nth-child(6)
+{
+  color:red;
+}
+.heading div:nth-child(7)
+{
+  color: blue;
+} 
+.heading div:nth-child(8)
+{
+  color:red;
+}
+.heading div:nth-child(9)
+{
+  color:#fb0;
+}
+.heading div:nth-child(10)
+{
+  color:blue;
+}
+.heading div:nth-child(11)
+{
+  color:green;
+}
+.heading div:nth-child(12)
+{
+  color:red;
+}
+.heading{
+    font-size: 40px;
+   
+}
+.image{
+    height:100px;
+    width:100px;
+    padding-bottom: 35px;
+}
+.card{
+    height:250px;
+    width:350px;
+
+}

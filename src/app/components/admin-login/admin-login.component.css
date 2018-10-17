@@ -1,0 +1,59 @@
+.card-header div div:nth-child(1)
+{
+  color: blue;
+} 
+.card-header div div:nth-child(2)
+{
+  color:red;
+}
+.card-header div div:nth-child(3)
+{
+  color:#fb0;
+}
+.card-header div div:nth-child(4)
+{
+  color:blue;
+}
+.card-header div div:nth-child(5)
+{
+  color:green;
+}
+.card-header div div:nth-child(6)
+{
+  color:red;
+}
+.card-header div div:nth-child(7)
+{
+  color: blue;
+} 
+.card-header div div:nth-child(8)
+{
+  color:red;
+}
+.card-header div div:nth-child(9)
+{
+  color:#fb0;
+}
+.card-header div div:nth-child(10)
+{
+  color:blue;
+}
+.card-header div div:nth-child(11)
+{
+  color:green;
+}
+
+.heading{
+    font-size: 30px;
+}
+/* .card-header{
+    background-color:black
+} */
+/* .container-fluid{
+    margin-radius:15px;
+} */
+.image{
+    height:75px;
+    width:75px;
+    float: right;
+}
