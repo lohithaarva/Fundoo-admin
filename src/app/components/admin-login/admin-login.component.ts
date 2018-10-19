@@ -12,6 +12,10 @@ export class AdminLoginComponent implements OnInit {
   constructor() { }
   data:any={}
   ngOnInit() {
+    if(localStorage.getItem("token"))
+    {
+      window.location.href =  "/admin-dashboard";
+    }
     $(document).ready(function () {
       $("#btn").click(function () {
       

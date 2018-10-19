@@ -1,44 +1,90 @@
-<div class="container container-fluid ">
-
-<div class="jumbotron jumbotron-fluid">
-        <div class="heading row">
-            <img src="../../../assets/images/admin.png" class="image" alt="image not found">
-            <div>F</div>
-            <div>u</div>
-            <div>n</div>
-            <div>d</div>
-            <div>o</div>
-            <div>o</div>
-            <div>N</div>
-            <div>o</div>
-            <div>t</div>
-            <div>e</div>
-            <div>s</div>
-        </div>       
-      
-      </div>
-
-
-      <!-- </div> -->
-      <!-- <h3> Service Packages</h3> -->
-      <div class="col-xs-0 col-sm-4"></div>
-      <div class="col-xs-12 col-sm-4" style="margin-top:5%">
-        <div id="services"></div>
-        </div>
-        <div class="col-xs-0 col-sm-4"></div>
+/** Purpose         : Dashboard page
+ *  @description
+ *  @file           : dashboard.component.ts
+ *  @author         : Lohithashree
+*/
+<div class="bg-image">
+  <div class="container container-fluid">
+    <div id="logout-button">
+    <button type="button" id="logout" class="btn btn-outline-secondary">Logout</button>
+    </div>
+    <div class="heading row" style="font-size:5vw">
      
-      <div class="col-md-5"></div>
-    
-    <div class="row row_style"></div>
-    <table class="table table-hover" id="tableList">
-        <thead>
-            <tr>
-              <th scope="col">Sl no</th>
-              <th scope="col">Firstname</th>
-              <th scope="col">Lastname</th>
-              <th scope="col">Email</th>
-              <th scope="col">Services</th>
-            </tr>
-        </thead>
-      </table>   
-     </div>
+      <div>F</div>
+      <div>u</div>
+      <div>n</div>
+      <div>d</div>
+      <div>o</div>
+      <div>o</div>
+      <div>A</div>
+      <div>d</div>
+      <div>m</div>
+      <div>i</div>
+      <div>n</div>
+      </div> 
+  </div>
+</div>
+<br>
+<!---------------------------cards------------------------->
+<div class="bg">
+  <div class=" container row">
+    <div class="col-lg-5 ">  
+    </div>
+    <div class="col-lg-4  " style="margin-top:1%">
+      <div class="cards row " id="services"></div>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+</div>
+
+<br>
+
+<!----------------------tables------------------------------->
+<div class="container-fluid " style="overflow-x:auto">
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered " id="tableList">
+      <thead class="thead-dark">
+        <tr class="clickable-row">
+          <th scope="col">Sl no</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Email</th>
+          <th scope="col">Services</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="myDataPopup" style="display:none">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">User Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       FirstName : <label id="firstName"></label><br>
+       LastName : <label id="lastName"></label><br>
+       Phonenumber : <label id="phoneNumber"></label><br>
+       Role : <label id="role"></label><br>
+       Selected service mode: <label id="service"></label><br>
+       Created date : <label id="createdDate"></label><br>
+       Modified date : <label id="modifiedData"></label><br>
+       <!-- <label id="userName"></label><br> -->
+       Email id : <label id="email"></label><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
