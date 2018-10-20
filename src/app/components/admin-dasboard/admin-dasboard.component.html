@@ -1,15 +1,10 @@
-/** Purpose         : Dashboard page
- *  @description
- *  @file           : dashboard.component.ts
- *  @author         : Lohithashree
-*/
+<!-- Declaration of classes for navigation bar -->
 <div class="bg-image">
   <div class="container container-fluid">
     <div id="logout-button">
-    <button type="button" id="logout" class="btn btn-outline-secondary">Logout</button>
+      <button type="button" id="logout" class="btn btn-outline-secondary" >Logout</button>
     </div>
-    <div class="heading row" style="font-size:5vw">
-     
+    <div class="heading row ">
       <div>F</div>
       <div>u</div>
       <div>n</div>
@@ -21,26 +16,26 @@
       <div>m</div>
       <div>i</div>
       <div>n</div>
-      </div> 
+    </div>
   </div>
 </div>
 <br>
-<!---------------------------cards------------------------->
+<!-- Providing properties and placing position of the cards -->
 <div class="bg">
-  <div class=" container row">
-    <div class="col-lg-5 ">  
+  <div class = "container row">
+    <div class  ="col-lg-5 ">
     </div>
-    <div class="col-lg-4  " style="margin-top:1%">
-      <div class="cards row " id="services"></div>
+    <div class = "col-lg-4" style = "margin-top:1%">
+      <div class = "cards row" id = "services"></div>
     </div>
-    <div class="col-lg-3"></div>
+    <div class = "col-lg-3" ></div>
   </div>
 </div>
 
 <br>
 
-<!----------------------tables------------------------------->
-<div class="container-fluid " style="overflow-x:auto">
+<!--Displaying of tables with required properties -->
+<div class="container-fluid card" style="overflow-x:auto">  
   <div class="table-responsive">
     <table class="table table-hover table-bordered " id="tableList">
       <thead class="thead-dark">
@@ -61,7 +56,7 @@
   Launch demo modal
 </button>
 
-<!-- Modal -->
+<!-- Displaying Modal properties -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -71,16 +66,21 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-       FirstName : <label id="firstName"></label><br>
-       LastName : <label id="lastName"></label><br>
-       Phonenumber : <label id="phoneNumber"></label><br>
-       Role : <label id="role"></label><br>
-       Selected service mode: <label id="service"></label><br>
-       Created date : <label id="createdDate"></label><br>
-       Modified date : <label id="modifiedData"></label><br>
-       <!-- <label id="userName"></label><br> -->
-       Email id : <label id="email"></label><br>
+      <!-- <div class="items"> -->
+      <div class="container-fluid">
+      <div class="row">
+      <div class="modal-body ">
+        FirstName : <label id="firstName"></label><br>
+        LastName : <label id="lastName"></label><br> 
+        Phonenumber : <label id="phoneNumber"></label><br> 
+        Role : <label id="role"></label><br> 
+        Selected service mode: <label id="service"></label><br>        
+        Created date : <label id="createdDate"></label><br> 
+        <!-- Modified date : <label id="modifiedData"></label><br> -->
+        <!-- <label id="userName"></label><br> -->
+        Email id : <label id="email"></label><br>
+      </div>
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

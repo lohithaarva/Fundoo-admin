@@ -1,3 +1,9 @@
+/* Purpose : Admin Dashboard page 
+* @description 
+* @file : admin-dashboard.component.ts 
+* @author : Lohithashree
+*/
+/* Importing components, jquery and datatables */
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import 'datatables.net';
@@ -13,23 +19,23 @@ export class AdminDasboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    /* Getting API of the userlist, who are registered */
     $(document).ready(function () {
       $(function () {
         $.ajax({
           url: "http://34.213.106.173/api/user/getAdminUserList",
           type: "GET",
-          success:function(response){
-           
-            if(response){
+          success: function (response) {
+
+            if (response) {
               console.log(response)
-              var arr=[];
-              for(var i=0;i<response.data.data.length;i++){
-                arr.push([i+1,response.data.data[i].firstName,response.data.data[i].lastName,response.data.data[i].email,response.data.data[i].service])
+              var arr = [];
+              for (var i = 0; i < response.data.data.length; i++) {
+                arr.push([i + 1, response.data.data[i].firstName, response.data.data[i].lastName, response.data.data[i].email, response.data.data[i].service])
               }
-              var table=$('#tableList').DataTable({
-                data:arr,
-                // "processing": true,
+              var table = $('#tableList').DataTable({
+                data: arr,
+                responsive: true,
                 // "serverSide": true,
                 // deferRender: true,
                 // scrollY: 200,
@@ -37,97 +43,89 @@ export class AdminDasboardComponent implements OnInit {
                 // scroller: true
 
               });
+
+              /* Function when clicked, triggers the particular row selection 
+                 according to the index value */
+
               $('#tableList tbody').on('click', 'tr', function () {
-                var id = this.id;
-                console.log(id);
-                var myindex=table.row(this).index();
-                var index = $.inArray(id, arr);
-                console.log(myindex);
-                if ( index === -1 ) {
-                    arr.push( id );
-                } else {
-                   arr.splice( index, 1 );
-                }
-                
-               console.log(response.data.data[myindex].firstName)
+                var myindex = table.row(this).index();
+
+                /*  Binding the data and getting response of the particular 
+                    attribute defined */
+
+                console.log(response.data.data[myindex].firstName)
                 $("#firstName").text(response.data.data[myindex].firstName);
                 $("#lastName").text(response.data.data[myindex].lastName);
                 $("#phoneNumber").text(response.data.data[myindex].phoneNumber);
                 $("#role").text(response.data.data[myindex].role);
                 $("#service").text(response.data.data[myindex].service);
                 $("#createdDate").text(response.data.data[myindex].createdDate);
-                $("#modifiedData").text(response.data.data[myindex].modifiedData);
-                $("#userName").text(response.data.data[myindex].userName);
                 $("#email").text(response.data.data[myindex].email);
 
-                $("#myDataPopup").click();
-            });
-            } 
+                $("#myDataPopup").click();   // triggers the modal function 
+              });
+            }
           },
-          error: function(error){
+          error: function (error) {
             console.log(error);
-          } 
+          }
         })
         return false;
-       
+
       });
 
-      var token=localStorage.getItem("token")
-      
+      /* Getting the details of number of service modes provided */
+
+      var token = localStorage.getItem("token")
       console.log(token)
       $(document).ready(function () {
-      $.ajax({
-        url: "http://34.213.106.173/api/user/UserStatics",
-        headers:{
-          'Authorization':token
-        },
-        type: "GET",
-        success: function (response) { console.log(response.data.details) 
-          var arr = response.data.details
-      
-     
-  var html='';
-          for (let index = 0; index < arr.length; index++) {
-            html += "<div class='col-sm-6'><div class='card' style='box-shadow: 10px 10px 10px'>";
-            html += "<div class='card-header text-white' style='background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(67, 67, 67))'>" + arr[index].service+" </div>";
-            html += "<div class= 'card-body'>" + arr[index].count+" </div>";
-            html +="</div></div>";
-          }
-        
-          $("#services").html(html);
-        }
-      });
-    });  
-  
-    $('#logout').click(function(){
-      console.log(localStorage.getItem("token"));
-      // window.location.href="/admin-dashboard";
-      
-      $.ajax({
-        url: "http://34.213.106.173/api/user/logout",
-        headers:{
-          'Authorization':localStorage.getItem("token")
-        },
-        type: "POST",
-        success: function (response){
-          // console.log(response);
-          console.log("logout successful");
-          localStorage.clear();
-          window.location.href="/admin-login";
-        },
-        error: function(error){
-          console.log(error);
-        } 
-    });
-  }); 
-})
-  
+        $.ajax({
+          url: "http://34.213.106.173/api/user/UserStatics",
+          headers: {
+            'Authorization': token
+          },
+          type: "GET",
+          success: function (response) {
+            console.log(response.data.details)
+            var arr = response.data.details
 
+
+            var html = '';
+            for (let index = 0; index < arr.length; index++) {
+              html += "<div class='col-sm-6'><div class='card' style='box-shadow: 10px 10px 10px'>";
+              html += "<div class='card-header text-center text-white' style='background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(67, 67, 67))'>" + arr[index].service + " </div>";
+              html += "<div class= 'card-body text-center'>" + arr[index].count + " </div>";
+              html += "</div></div>";
+            }
+            $("#services").html(html);
+          }
+        });
+      });
+
+      /* calling API for the the process of clearing token of the 
+         particular user who is signning of  */
+
+      $('#logout').click(function () {
+        console.log(localStorage.getItem("token")); //getting token and storing in localstorage
+        // window.location.href="/admin-dashboard";
+
+        $.ajax({
+          url: "http://34.213.106.173/api/user/logout",
+          headers: {
+            'Authorization': localStorage.getItem("token")
+          },
+          type: "POST",
+          success: function (response) {
+            // console.log(response);
+            console.log("logout successful");
+            localStorage.clear(); // clearing token from local storage
+            $(location).attr('href', "admin-login") //routing to login page
+          },
+          error: function (error) {
+            console.log(error);
+          }
+        });
+      });
+    })
   }
-  }
-//   $(".clickable-row").click(function(){
-//     if($(this).hasClass("highlight"))
-//         $(this).removeClass('highlight');
-//     else
-//         $(this).addClass('highlight').siblings().removeClass('highlight');
-// })
+}
