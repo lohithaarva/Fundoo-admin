@@ -1,0 +1,91 @@
+/* Providing properties for background image */
+.bg-image {
+    background-image: url("../../../assets/images/admindemo.jpg");
+    height: 80px;
+}
+/* Providing color properties for the header*/
+.heading div:nth-child(1)
+{
+color:blue;
+} 
+.heading div:nth-child(2)
+{
+color:red;
+}
+.heading div:nth-child(3)
+{
+color:#fb0;
+}
+.heading div:nth-child(4)
+{
+color:blue;
+}
+.heading div:nth-child(5)
+{
+color:green;
+}
+.heading div:nth-child(6)
+{
+color:red;
+}
+.heading div:nth-child(7)
+{
+color:blue;
+} 
+.heading div:nth-child(8)
+{
+color:red;
+}
+.heading div:nth-child(9)
+{
+color:#fb0;
+}
+.heading div:nth-child(10)
+{
+color:blue;
+}
+.heading div:nth-child(11)
+{
+color:green;
+}
+.heading div:nth-child(12)
+{
+color:red;
+}
+.heading{
+  font-size: 40px;     
+}
+/* Properties for logout button and table*/
+#logout-button{
+float: right;
+margin-top:2%;
+}
+.table{
+cursor: pointer;
+}
+.modal-header{
+background: linear-gradient(to right, rgb(51, 51, 51), rgb(221, 24, 24));
+color:white;
+}
+.items{
+align-items: center;
+}
+@media only screen and (max-width: 600px) {
+.heading {
+  font-size:6vw;
+   padding-top: 20px; 
+   padding-left: 30px;  
+}
+}
+@media only screen and (max-width: 600px) {
+#logout-button{
+  font-size: 5vw;
+  padding-top: 20px;
+}
+/* .btn{
+  float:right
+} */
+}
+.buttonAlign{
+  margin-right: 2%
+}

@@ -82,4 +82,10 @@ margin-top:2%;
     font-size: 5vw;
     padding-top: 20px;
   }
+  /* .btn{
+    float:right
+  } */
+}
+.btn btn-secondary btn-smp{
+  background-color: black;
 }

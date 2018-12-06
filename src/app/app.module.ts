@@ -6,12 +6,14 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { AdminDasboardComponent } from './components/admin-dasboard/admin-dasboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './auth.service';
+import { QAndAComponent } from './components/q-and-a/q-and-a.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,
-    AdminDasboardComponent
+    AdminDasboardComponent,
+    QAndAComponent
   ],
   imports: [
     BrowserModule,

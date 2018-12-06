@@ -17,8 +17,14 @@ import 'datatables.net-scroller';
 export class AdminDasboardComponent implements OnInit {
 
   constructor() { }
+  
 
   ngOnInit() {
+
+    $("#btn").click(function () {
+      $(location).attr('href', "qanda")
+    })
+    
     /* Getting API of the userlist, who are registered */
     $(document).ready(function () {
       $(function () {
@@ -128,4 +134,5 @@ export class AdminDasboardComponent implements OnInit {
       });
     })
   }
+
 }
