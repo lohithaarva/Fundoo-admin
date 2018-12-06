@@ -7,13 +7,15 @@ import { AdminDasboardComponent } from './components/admin-dasboard/admin-dasboa
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './auth.service';
 import { QAndAComponent } from './components/q-and-a/q-and-a.component';
+import { LodersComponent } from './components/loders/loders.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,
     AdminDasboardComponent,
-    QAndAComponent
+    QAndAComponent,
+    LodersComponent
   ],
   imports: [
     BrowserModule,

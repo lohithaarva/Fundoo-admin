@@ -89,3 +89,10 @@ align-items: center;
 .buttonAlign{
   margin-right: 2%
 }
+table td{
+  word-break: break-all;
+}
+table  {
+  table-layout: fixed;
+  /* word-wrap: break-word; */
+}
